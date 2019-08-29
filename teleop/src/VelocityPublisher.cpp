@@ -31,7 +31,7 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #include <mutex>
 #include <string>
 #include <stdio.h>
-#include <Scheduler.h>
+#include "ext/Scheduler.h"
 #include <boost/bind.hpp>
 #include <ros/ros.h>
 #include <ros/console.h>
