@@ -86,3 +86,17 @@ target_link_libraries(brickpi3_odom_publisher ${catkin_LIBRARIES})
 target_link_libraries(brickpi3_odom_publisher_rxros ${catkin_LIBRARIES})
 target_link_libraries(brickpi3_base_controller ${catkin_LIBRARIES})
 target_link_libraries(brickpi3_base_controller_rxros ${catkin_LIBRARIES})
+
+install(
+  TARGETS
+    brickpi3
+    brickpi3_base_controller
+    brickpi3_base_controller_rxros
+    brickpi3_joint_states_publisher
+    brickpi3_joint_states_publisher_rxros
+    brickpi3_odom_publisher
+    brickpi3_odom_publisher_rxros
+    brickpi3_rxros
+  ARCHIVE DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
+  LIBRARY DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
+  RUNTIME DESTINATION ${CATKIN_GLOBAL_BIN_DESTINATION})

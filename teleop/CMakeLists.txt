@@ -42,3 +42,15 @@ target_link_libraries(keyboard_publisher       ${catkin_LIBRARIES})
 target_link_libraries(keyboard_publisher_rxros ${catkin_LIBRARIES})
 target_link_libraries(velocity_publisher       ${catkin_LIBRARIES})
 target_link_libraries(velocity_publisher_rxros ${catkin_LIBRARIES})
+
+install(
+  TARGETS
+    joystick_publisher
+    joystick_publisher_rxros
+    keyboard_publisher
+    keyboard_publisher_rxros
+    velocity_publisher
+    velocity_publisher_rxros
+  ARCHIVE DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
+  LIBRARY DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
+  RUNTIME DESTINATION ${CATKIN_GLOBAL_BIN_DESTINATION})
