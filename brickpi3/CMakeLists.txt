@@ -11,7 +11,6 @@ find_package(catkin REQUIRED
     brickpi3_msgs
     geometry_msgs
     nav_msgs
-    roscpp
     rxros
     sensor_msgs
     std_msgs
@@ -23,7 +22,6 @@ catkin_package(
     brickpi3_msgs
     geometry_msgs
     nav_msgs
-    roscpp
     rxros
     sensor_msgs
     std_msgs

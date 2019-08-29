@@ -7,7 +7,6 @@ if(NOT CMAKE_CXX_STANDARD)
 endif()
 
 find_package(catkin REQUIRED COMPONENTS
-  roscpp
   rxros
   std_msgs
   teleop_msgs
@@ -15,7 +14,6 @@ find_package(catkin REQUIRED COMPONENTS
 
 catkin_package(
   CATKIN_DEPENDS
-    roscpp
     rxros
     std_msgs
     teleop_msgs
