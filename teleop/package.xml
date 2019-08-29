@@ -12,15 +12,7 @@
 
   <buildtool_depend>catkin</buildtool_depend>
 
-  <build_depend>rxros</build_depend>
-  <build_depend>std_msgs</build_depend>
-  <build_depend>teleop_msgs</build_depend>
-
-  <build_export_depend>rxros</build_export_depend>
-  <build_export_depend>std_msgs</build_export_depend>
-  <build_export_depend>teleop_msgs</build_export_depend>
-
-  <exec_depend>rxros</exec_depend>
-  <exec_depend>std_msgs</exec_depend>
-  <exec_depend>teleop_msgs</exec_depend>
+  <depend>rxros</depend>
+  <depend>std_msgs</depend>
+  <depend>teleop_msgs</depend>
 </package>
