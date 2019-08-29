@@ -30,7 +30,7 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 #include <iostream>
 #include <algorithm>
-#include <rxros.h>
+#include <rxros/rxros.h>
 #include <sensor_msgs/JointState.h>
 using namespace rxcpp::operators;
 using namespace rxros::operators;

@@ -32,7 +32,7 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #define BRICKPI3_BRICKPI3OBSERVABLE_RX_H
 
 #include <string>
-#include <rxros.h>
+#include <rxros/rxros.h>
 #include "BrickPi3Device.h"
 
 struct actuator_motor_t

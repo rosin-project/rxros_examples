@@ -28,7 +28,7 @@ OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
 OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 */
 
-#include <rxros.h>
+#include <rxros/rxros.h>
 #include <teleop_msgs/Keyboard.h>
 #include "KeyboardPublisher.h"
 using namespace rxcpp::operators;
