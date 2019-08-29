@@ -30,7 +30,7 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 #include <string>
 #include <iostream>
-#include <Scheduler.h>
+#include "ext/Scheduler.h"
 #include <boost/bind.hpp>
 #include <ros/ros.h>
 #include <ros/console.h>
