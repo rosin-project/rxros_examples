@@ -29,8 +29,8 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 */
 
 #include <rxros/rxros.h>
-#include <teleop_msgs/Joystick.h>
-#include <teleop_msgs/Keyboard.h>
+#include <rxros_teleop_msgs/Joystick.h>
+#include <rxros_teleop_msgs/Keyboard.h>
 #include <geometry_msgs/Twist.h>
 #include "JoystickPublisher.h"
 #include "KeyboardPublisher.h"
@@ -85,10 +85,10 @@ int main(int argc, char** argv) {
         vel.angular.z = std::get<1>(velTuple);
         return vel;};
 
-    auto joyObsrv = rxros::observable::from_topic<teleop_msgs::Joystick>("/joystick") // create an observable stream from "/joystick" topic
-        | map([](teleop_msgs::Joystick joy) { return joy.event; });
-    auto keyObsrv = rxros::observable::from_topic<teleop_msgs::Keyboard>("/keyboard") // create an observable stream from "/keyboard" topic
-        | map([](teleop_msgs::Keyboard key) { return key.event; });
+    auto joyObsrv = rxros::observable::from_topic<rxros_teleop_msgs::Joystick>("/joystick") // create an observable stream from "/joystick" topic
+        | map([](rxros_teleop_msgs::Joystick joy) { return joy.event; });
+    auto keyObsrv = rxros::observable::from_topic<rxros_teleop_msgs::Keyboard>("/keyboard") // create an observable stream from "/keyboard" topic
+        | map([](rxros_teleop_msgs::Keyboard key) { return key.event; });
     joyObsrv.merge(keyObsrv)                              // merge the joystick and keyboard messages into an observable teleop stream.
     | scan(std::make_tuple(0.0, 0.0), teleop2VelTuple)    // turn the teleop stream into a linear and angular velocity stream.
     | map(velTuple2TwistMsg)                              // turn the linear and angular velocity stream into a Twist stream.

@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <package format="2">
-  <name>teleop</name>
+  <name>rxros_teleop</name>
   <version>0.1.0</version>
   <description>The RxROS teleop package</description>
 
@@ -14,5 +14,5 @@
 
   <depend>rxros</depend>
   <depend>std_msgs</depend>
-  <depend>teleop_msgs</depend>
+  <depend>rxros_teleop_msgs</depend>
 </package>
