@@ -29,7 +29,7 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 */
 
 #include <rxros/rxros.h>
-#include <teleop_msgs/Joystick.h>
+#include <rxros_teleop_msgs/Joystick.h>
 #include "JoystickPublisher.h"
 using namespace rxcpp::operators;
 using namespace rxros::operators;
@@ -55,7 +55,7 @@ int main(int argc, char** argv)
 
     auto joystickEvent2JoystickMsg = [=](const auto joystickEvent) {
         auto makeJoystickMsg = [=] (auto event) {
-            teleop_msgs::Joystick joystickMsg;
+            rxros_teleop_msgs::Joystick joystickMsg;
             joystickMsg.time = ros::Time(joystickEvent.time, 0);
             joystickMsg.event = event;
             return joystickMsg;};
@@ -92,7 +92,7 @@ int main(int argc, char** argv)
 
     rxros::observable::from_device<joystick_event>(joystickDevice)
         | map(joystickEvent2JoystickMsg)
-        | publish_to_topic<teleop_msgs::Joystick>("/joystick");
+        | publish_to_topic<rxros_teleop_msgs::Joystick>("/joystick");
 
     rxros::logging().info() << "Spinning joystick_publisher ...";
     rxros::spin();

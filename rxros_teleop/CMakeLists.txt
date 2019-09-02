@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 2.8.3)
-project(teleop)
+project(rxros_teleop)
 
 if(NOT CMAKE_CXX_STANDARD)
   set(CMAKE_CXX_STANDARD 14)
@@ -9,14 +9,14 @@ endif()
 find_package(catkin REQUIRED COMPONENTS
   rxros
   std_msgs
-  teleop_msgs
+  rxros_teleop_msgs
 )
 
 catkin_package(
   CATKIN_DEPENDS
     rxros
     std_msgs
-    teleop_msgs
+    rxros_teleop_msgs
 )
 
 include_directories(${catkin_INCLUDE_DIRS})

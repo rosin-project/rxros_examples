@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 2.8.3)
-project(teleop_msgs)
+project(rxros_teleop_msgs)
 
 find_package(catkin REQUIRED
   COMPONENTS

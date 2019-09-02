@@ -29,7 +29,7 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 */
 
 #include <rxros/rxros.h>
-#include <teleop_msgs/Keyboard.h>
+#include <rxros_teleop_msgs/Keyboard.h>
 #include "KeyboardPublisher.h"
 using namespace rxcpp::operators;
 using namespace rxros::operators;
@@ -44,7 +44,7 @@ int main(int argc, char** argv)
 
     auto keyboardEvent2KeyboardMsg = [](const auto keyboardEvent) {
         auto makeKeyboardMsg = [=] (auto event) {
-            teleop_msgs::Keyboard keyboardMsg;
+            rxros_teleop_msgs::Keyboard keyboardMsg;
             keyboardMsg.time = ros::Time(keyboardEvent.time.tv_sec, keyboardEvent.time.tv_usec);
             keyboardMsg.event = event;
             return keyboardMsg;};
@@ -64,7 +64,7 @@ int main(int argc, char** argv)
 
     rxros::observable::from_device<input_event>(keyboardDevice)
         | map(keyboardEvent2KeyboardMsg)
-        | publish_to_topic<teleop_msgs::Keyboard>("/keyboard");
+        | publish_to_topic<rxros_teleop_msgs::Keyboard>("/keyboard");
 
     rxros::logging().info() << "Spinning keyboard_publisher...";
     rxros::spin();

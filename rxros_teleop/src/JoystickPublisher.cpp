@@ -32,7 +32,7 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #include <string>
 #include <ros/ros.h>
 #include <ros/console.h>
-#include <teleop_msgs/Joystick.h>
+#include <rxros_teleop_msgs/Joystick.h>
 #include "JoystickPublisher.h"
 
 #define JS_EVENT_BUTTON 0x01    /* button pressed/released */
@@ -49,7 +49,7 @@ int main(int argc, char** argv)
 {
     ros::init(argc, argv, "joystick_publisher"); // Name of this Node.
     ros::NodeHandle nodeHandle;
-    ros::Publisher publisher = nodeHandle.advertise<teleop_msgs::Joystick>("/joystick", 10); // Publisher Topic /joystick
+    ros::Publisher publisher = nodeHandle.advertise<rxros_teleop_msgs::Joystick>("/joystick", 10); // Publisher Topic /joystick
 
     // Read parameter device
     std::string joystickDevice;
@@ -66,7 +66,7 @@ int main(int argc, char** argv)
         read(fd, &joystickEvent, sizeof(joystickEvent));
         if (joystickEvent.type == JS_EVENT_BUTTON || joystickEvent.type == JS_EVENT_AXIS) {
             ros::Time rosTime(joystickEvent.time, 0);
-            teleop_msgs::Joystick joystick;
+            rxros_teleop_msgs::Joystick joystick;
             joystick.time = rosTime;
 
             unsigned char type = joystickEvent.type;
