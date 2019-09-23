@@ -53,7 +53,7 @@ int main(int argc, char **argv)
   const std::string hello = "hello world ";
 
   rxcpp::observable<>::interval (std::chrono::milliseconds (1000)) 
-    | map ([hello](int i) 
+    | map ([&](int i) 
         { return mk_msg(hello + std::to_string(i)); })
     | tap ([](const std_msgs::String& msg) 
         { ROS_INFO ("%s", msg.data.c_str()); })
