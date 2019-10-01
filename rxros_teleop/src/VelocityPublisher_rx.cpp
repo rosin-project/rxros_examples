@@ -77,7 +77,9 @@ int main(int argc, char** argv) {
         else if (event == JS_EVENT_AXIS_LEFT || event == KB_EVENT_LEFT)
             return std::make_tuple(prevVelLinear, adaptVelocity((prevVelAngular + deltaVelAngular), minVelAngular, maxVelAngular, true)); // move left
         else if (event == JS_EVENT_AXIS_RIGHT || event == KB_EVENT_RIGHT)
-            return std::make_tuple(prevVelLinear, adaptVelocity((prevVelAngular - deltaVelAngular), minVelAngular, maxVelAngular, false));}; // move right
+            return std::make_tuple(prevVelLinear, adaptVelocity((prevVelAngular - deltaVelAngular), minVelAngular, maxVelAngular, false)); // move right
+        else
+            return std::make_tuple(prevVelLinear, prevVelAngular);}; // do nothing    
 
     auto velTuple2TwistMsg = [](auto velTuple) {
         geometry_msgs::Twist vel;
