@@ -13,21 +13,17 @@ find_package(catkin REQUIRED COMPONENTS
 
 catkin_package(
   CATKIN_DEPENDS 
-    rxros std_msgs
+    rxros
+    std_msgs
 )
 
 include_directories(
   ${catkin_INCLUDE_DIRS}
 )
 
-add_executable(rxros_listener 
-  src/rxros_listener.cpp
-)
-
-add_dependencies(rxros_listener ${catkin_EXPORTED_TARGETS})
-
+add_executable(rxros_listener src/rxros_listener.cpp)
 target_link_libraries(rxros_listener ${catkin_LIBRARIES})
-
+add_dependencies(rxros_listener ${catkin_EXPORTED_TARGETS})
 
 install(
   TARGETS 
