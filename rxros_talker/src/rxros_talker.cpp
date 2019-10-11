@@ -56,7 +56,7 @@ int main(int argc, char **argv)
     | map ([&](int i) 
         { return mk_msg(hello + std::to_string(i)); })
     | tap ([](const std_msgs::String& msg) 
-        { ROS_INFO ("%s", msg.data.c_str()); })
+        { ROS_INFO_STREAM (msg.data); })
     | publish_to_topic<std_msgs::String> ("/chatter", 1000);
 
   rxros::spin();

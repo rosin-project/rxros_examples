@@ -41,8 +41,9 @@ int main(int argc, char **argv)
   rxros::init(argc, argv, "listener");
 
   rxros::observable::from_topic<std_msgs::String>("/chatter", 1000)
-    .subscribe ([] (const std_msgs::String& msg)
-        { ROS_INFO("I heard: [%s]", msg.data.c_str()); });
+    .subscribe ( [] (const std_msgs::String& msg) { 
+                  ROS_INFO_STREAM ("I heard: [" << msg.data << "]"); 
+    });
 
   rxros::spin();
 
