@@ -36,9 +36,6 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #include <rxros/rxros.h>
 #include <std_msgs/String.h>
 
-using namespace rxcpp::operators;
-using namespace rxros::operators;
-
 std_msgs::String mk_msg (const std::string& s)
 { 
     std_msgs::String msg;
@@ -49,6 +46,8 @@ std_msgs::String mk_msg (const std::string& s)
 
 int main(int argc, char **argv)
 {
+  using namespace rxcpp::operators;
+
   rxros::init(argc, argv, "talker");
   const std::string hello = "hello world ";
 
@@ -57,7 +56,7 @@ int main(int argc, char **argv)
         { return mk_msg(hello + std::to_string(i)); })
     | tap ([](const std_msgs::String& msg) 
         { ROS_INFO_STREAM (msg.data); })
-    | publish_to_topic<std_msgs::String> ("/chatter", 1000);
+    | rxros::operators::publish_to_topic<std_msgs::String> ("/chatter", 1000);
 
   rxros::spin();
   return 0;
