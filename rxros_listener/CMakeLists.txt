@@ -20,8 +20,6 @@ include_directories(
   ${catkin_INCLUDE_DIRS}
 )
 
-link_directories(${catkin_LIBRARY_DIRS})
-
 add_executable(listener 
   src/listener.cpp
 )
