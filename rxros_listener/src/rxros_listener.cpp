@@ -34,7 +34,7 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
 #include <rxros/rxros.h>
-#include "std_msgs/String.h"
+#include <std_msgs/String.h>
 
 int main(int argc, char **argv)
 {

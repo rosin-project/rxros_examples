@@ -42,7 +42,7 @@ using namespace rxros::operators;
 std_msgs::String mk_msg (const std::string& s)
 { 
     std_msgs::String msg;
-    msg.data = std::string(s);
+    msg.data = s;
     return msg;
 };
 
