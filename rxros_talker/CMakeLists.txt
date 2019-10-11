@@ -20,18 +20,18 @@ include_directories(
   ${catkin_INCLUDE_DIRS}
 )
 
-add_executable(talker 
-  src/talker.cpp
+add_executable(rxros_talker 
+  src/rxros_talker.cpp
 )
 
-add_dependencies(talker ${catkin_EXPORTED_TARGETS})
+add_dependencies(rxros_talker ${catkin_EXPORTED_TARGETS})
 
-target_link_libraries(talker ${catkin_LIBRARIES})
+target_link_libraries(rxros_talker ${catkin_LIBRARIES})
 
 
 install(
   TARGETS 
-    talker
+    rxros_talker
   ARCHIVE DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
   LIBRARY DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
   RUNTIME DESTINATION ${CATKIN_GLOBAL_BIN_DESTINATION}

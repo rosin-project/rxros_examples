@@ -20,18 +20,18 @@ include_directories(
   ${catkin_INCLUDE_DIRS}
 )
 
-add_executable(listener 
-  src/listener.cpp
+add_executable(rxros_listener 
+  src/rxros_listener.cpp
 )
 
-add_dependencies(listener ${catkin_EXPORTED_TARGETS})
+add_dependencies(rxros_listener ${catkin_EXPORTED_TARGETS})
 
-target_link_libraries(listener ${catkin_LIBRARIES})
+target_link_libraries(rxros_listener ${catkin_LIBRARIES})
 
 
 install(
   TARGETS 
-    listener
+    rxros_listener
   ARCHIVE DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
   LIBRARY DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
   RUNTIME DESTINATION ${CATKIN_GLOBAL_BIN_DESTINATION}
