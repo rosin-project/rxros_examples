@@ -13,5 +13,4 @@
   <buildtool_depend>catkin</buildtool_depend>
   <depend>rxros</depend>
   <depend>std_msgs</depend>
-
 </package>
