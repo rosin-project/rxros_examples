@@ -39,7 +39,7 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 using namespace rxcpp::operators;
 using namespace rxros::operators;
 
-std_msgs::String mk_msg (const std::string& s)  // the missing factory
+std_msgs::String mk_msg (const std::string& s)
 { 
     std_msgs::String msg;
     msg.data = std::string(s);
