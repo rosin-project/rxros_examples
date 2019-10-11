@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 2.8.3)
-project(listener)
+project(rxros_listener)
 
 if(NOT CMAKE_CXX_STANDARD)
   set(CMAKE_CXX_STANDARD 14)
@@ -12,8 +12,8 @@ find_package(catkin REQUIRED COMPONENTS
 )
 
 catkin_package(
-   CATKIN_DEPENDS 
-     rxros std_msgs
+  CATKIN_DEPENDS 
+    rxros std_msgs
 )
 
 include_directories(
