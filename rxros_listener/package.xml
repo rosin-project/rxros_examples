@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>rxros_listener</name>
+  <version>0.0.1</version>
+  <description>The classic ROS listener tutorial example implemented with RxROS.</description>
+
+  <author>Andrzej Wasowski</author>
+  <maintainer email="henrik7264@outlook.com">Henrik Larsen</maintainer>
+  <maintainer email="g.a.vanderhoorn@tudelft.nl">G.A. vd. Hoorn</maintainer>
+  <maintainer email="wasowski@itu.dk">Andrzej Wasowski</maintainer>
+
+  <license>BSD</license>
+
+  <buildtool_depend>catkin</buildtool_depend>
+  <depend>rxros</depend>
+  <depend>std_msgs</depend>
+</package>
