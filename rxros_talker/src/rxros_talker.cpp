@@ -48,7 +48,7 @@ int main(int argc, char **argv)
 {
   using namespace rxcpp::operators;
 
-  rxros::init(argc, argv, "talker");
+  ros::init(argc, argv, "talker");
   const std::string hello = "hello world ";
 
   rxcpp::observable<>::interval (std::chrono::milliseconds (1000)) 
@@ -58,6 +58,6 @@ int main(int argc, char **argv)
       { ROS_INFO_STREAM (msg.data); })
     | rxros::operators::publish_to_topic<std_msgs::String> ("/chatter", 1000);
 
-  rxros::spin();
+  ros::spin();
   return 0;
 }

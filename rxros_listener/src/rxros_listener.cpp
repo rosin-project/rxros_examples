@@ -38,14 +38,14 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 int main(int argc, char **argv)
 {
-  rxros::init(argc, argv, "listener");
+  ros::init(argc, argv, "listener");
 
   rxros::observable::from_topic<std_msgs::String>("/chatter", 1000)
     .subscribe ( [] (const std_msgs::String& msg) { 
       ROS_INFO_STREAM ("I heard: [" << msg.data << "]"); 
     });
 
-  rxros::spin();
+  ros::spin();
 
   return 0;
 }

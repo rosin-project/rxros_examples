@@ -50,7 +50,7 @@ auto join_with_latest_from(const Observable& observable) {
 
 
 int main(int argc, char** argv) {
-    rxros::init(argc, argv, "brickpi3"); // Name of this node.
+    ros::init(argc, argv, "brickpi3"); // Name of this node.
 
     auto touchEvent2ContactMsg = [] (const std::string& frameId) {
         return [=](const sensor_touch_t& touchEvent) {
@@ -154,5 +154,5 @@ int main(int argc, char** argv) {
             }},
         [](){}); // on completed event
 
-    rxros::spin();
+    ros::spin();
 }

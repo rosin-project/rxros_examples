@@ -39,7 +39,7 @@ using namespace rxros::operators;
 
 
 int main(int argc, char** argv) {
-    rxros::init(argc, argv, "velocity_publisher"); // Name of this node.
+    ros::init(argc, argv, "velocity_publisher"); // Name of this node.
 
     const auto frequencyInHz = rxros::parameter::get("/velocity_publisher/frequency", 10.0); // hz
     const auto minVelLinear = rxros::parameter::get("/velocity_publisher/min_vel_linear", 0.04); // m/s
@@ -98,5 +98,5 @@ int main(int argc, char** argv) {
     | publish_to_topic<geometry_msgs::Twist>("/cmd_vel"); // publish the Twist messages to the topic "/cmd_vel"
 
     rxros::logging().info() << "Spinning velocity_publisher ...";
-    rxros::spin();
+    ros::spin();
 }

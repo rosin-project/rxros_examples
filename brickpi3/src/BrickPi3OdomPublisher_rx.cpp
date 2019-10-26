@@ -41,7 +41,7 @@ using namespace rxros::operators;
 
 int main(int argc, char** argv)
 {
-    rxros::init(argc, argv, "brickpi3_odom_publisher"); // Name of this node.
+    ros::init(argc, argv, "brickpi3_odom_publisher"); // Name of this node.
 
     const auto l_wheel_joint = rxros::parameter::get("/brickpi3/l_wheel_joint", "l_wheel_joint");
     const auto r_wheel_joint = rxros::parameter::get("/brickpi3/r_wheel_joint", "r_wheel_joint");
@@ -107,5 +107,5 @@ int main(int argc, char** argv)
         | map(stsTuple2Odometry)
         | publish_to_topic<nav_msgs::Odometry>("/odom");
 
-    rxros::spin();
+    ros::spin();
 }
