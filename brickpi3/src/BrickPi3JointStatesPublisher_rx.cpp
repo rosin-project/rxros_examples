@@ -53,7 +53,7 @@ auto tuple_2_joint_states = [](const auto& ljs, const auto& rjs) { // tuple: lef
 
 int main(int argc, char** argv)
 {
-    rxros::init(argc, argv, "brickpi3_joint_states_publisher"); // Name of this node.
+    ros::init(argc, argv, "brickpi3_joint_states_publisher"); // Name of this node.
 
     const auto l_wheel_joint = rxros::parameter::get("/brickpi3/l_wheel_joint", "l_wheel_joint");
     const auto r_wheel_joint = rxros::parameter::get("/brickpi3/r_wheel_joint", "r_wheel_joint");
@@ -68,5 +68,5 @@ int main(int argc, char** argv)
     left_wheel_observable.zip(tuple_2_joint_states, right_wheel_observable)
     | publish_to_topic<sensor_msgs::JointState>("/joint_states");
 
-    rxros::spin();
+    ros::spin();
 }

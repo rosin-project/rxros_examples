@@ -41,7 +41,7 @@ enum WheelId{ LEFT_WHEEL = 0, RIGHT_WHEEL = 1};
 
 int main(int argc, char** argv)
 {
-    rxros::init(argc, argv, "brickpi3_base_controller"); // Name of this node.
+    ros::init(argc, argv, "brickpi3_base_controller"); // Name of this node.
 
     const auto l_wheel_joint = rxros::parameter::get("/brickpi3/l_wheel_joint", "l_wheel_joint");
     const auto r_wheel_joint = rxros::parameter::get("/brickpi3/r_wheel_joint", "r_wheel_joint");
@@ -104,5 +104,5 @@ int main(int argc, char** argv)
     | map(effort_2_joint_cmd(RIGHT_WHEEL))
     | publish_to_topic<brickpi3_msgs::JointCommand>("/joint_command");
 
-    rxros::spin();
+    ros::spin();
 }

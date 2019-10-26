@@ -65,7 +65,7 @@ namespace brickpi3
                     brickPi3.set_sensor_type(id, SENSOR_TYPE_TOUCH_NXT);
 
                     ros::Rate rate(frequency);
-                    while (rxros::ok()) {
+                    while (ros::ok()) {
                         sensor_touch_t touch;
                         int rc = brickPi3.get_sensor(id, &touch);
                         if (rc == 0) {
@@ -98,7 +98,7 @@ namespace brickpi3
                     brickPi3.set_sensor_type(id, SENSOR_TYPE_NXT_COLOR_FULL);
 
                     ros::Rate rate(frequency);
-                    while (rxros::ok()) {
+                    while (ros::ok()) {
                         sensor_color_t color;
                         int rc = brickPi3.get_sensor(id, &color);
                         if (rc == 0) {
@@ -130,7 +130,7 @@ namespace brickpi3
                     brickPi3.set_sensor_type(id, SENSOR_TYPE_NXT_ULTRASONIC);
 
                     ros::Rate rate(frequency);
-                    while (rxros::ok()) {
+                    while (ros::ok()) {
                         sensor_ultrasonic_t ultrasonic;
                         int rc = brickPi3.get_sensor(id, &ultrasonic);
                         if (rc == 0) {
@@ -162,7 +162,7 @@ namespace brickpi3
                     brickPi3.reset_motor_encoder(id);
 
                     ros::Rate rate(frequency);
-                    while (rxros::ok()) {
+                    while (ros::ok()) {
                         actuator_motor_t motor{};
                         int rc = brickPi3.get_motor_status(id, motor.motorState, motor.motorPower, motor.motorPosition, motor.motorDPS);
                         if (rc == 0) {

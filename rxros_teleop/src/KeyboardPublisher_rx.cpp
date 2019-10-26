@@ -37,7 +37,7 @@ using namespace rxros::operators;
 
 int main(int argc, char** argv)
 {
-    rxros::init(argc, argv, "keyboard_publisher"); // Name of this Node.
+    ros::init(argc, argv, "keyboard_publisher"); // Name of this Node.
 
     const auto keyboardDevice = rxros::parameter::get("/keyboard_publisher/device", "/dev/input/event4"); // Use event4 for dell, event4 for nuc and event1 for others
     rxros::logging().info() << "Keyboard device: " << keyboardDevice;
@@ -67,5 +67,5 @@ int main(int argc, char** argv)
         | publish_to_topic<rxros_teleop_msgs::Keyboard>("/keyboard");
 
     rxros::logging().info() << "Spinning keyboard_publisher...";
-    rxros::spin();
+    ros::spin();
 }

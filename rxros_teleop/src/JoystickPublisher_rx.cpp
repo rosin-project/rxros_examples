@@ -48,7 +48,7 @@ struct joystick_event
 
 int main(int argc, char** argv)
 {
-    rxros::init(argc, argv, "joystick_publisher"); // Name of this Node.
+    ros::init(argc, argv, "joystick_publisher"); // Name of this Node.
 
     const auto joystickDevice = rxros::parameter::get("/joystick_publisher/device", "/dev/input/js0");
     rxros::logging().info() << "Joystick device: " << joystickDevice;
@@ -95,5 +95,5 @@ int main(int argc, char** argv)
         | publish_to_topic<rxros_teleop_msgs::Joystick>("/joystick");
 
     rxros::logging().info() << "Spinning joystick_publisher ...";
-    rxros::spin();
+    ros::spin();
 }
